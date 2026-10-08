@@ -33,6 +33,7 @@ The website is built with:
 
 * HTML
 * CSS
+* Vanilla JavaScript
 * GitHub Pages
 
 No frameworks or build tools are required.
@@ -41,8 +42,10 @@ No frameworks or build tools are required.
 
 ```text
 Jacob-Potts.github.io/
-├── index.html
-├── style.css
+├── index.html          # page content
+├── style.css           # datasheet theme, light/dark, print styles
+├── script.js           # pin diagram, project links, theme toggle
+├── jacob-potts-1000.jpg  # web-sized photo (original kept for social previews)
 ├── resume.pdf
 └── README.md
 ```
@@ -69,6 +72,8 @@ Then open `http://localhost:8000` in your browser.
 Website content is located in `index.html`.
 
 Styling and responsive layouts are located in `style.css`.
+
+The pin diagram's labels and descriptions live in the `pins` array in `script.js`, and project card links live in `projectLinks` in the same file.
 
 To update the resume, replace `resume.pdf` while keeping the same filename.
 
