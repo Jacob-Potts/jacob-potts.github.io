@@ -164,6 +164,11 @@
         <a href="#contact"><span>6</span>Contact</a>
       </nav>
 
+      <a class="qr-button" href="#qr" data-qr-open aria-label="Show QR code for this website">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h6v6H1zm2 2v2h2V3zm6-2h6v6H9zm2 2v2h2V3zM1 9h6v6H1zm2 2v2h2v-2zm6-2h2v2H9zm2 2h2v2h-2zm2-2h2v2h-2zm0 4h2v2h-2zm-4 0h2v2H9z"/></svg>
+        <span>QR</span>
+      </a>
+
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
         <span class="theme-toggle-track" aria-hidden="true"><i></i></span>
       </button>
@@ -179,7 +184,7 @@
            TITLE BLOCK
            ==================================================== -->
 
-      <div class="title-block" aria-label="Document information">
+      <div class="title-block intro-cells" aria-label="Document information">
         <div><span>Part no.</span><strong>JP-2028</strong></div>
         <div class="tb-wide"><span>Description</span><strong>Computer engineer — embedded software &amp; hardware test</strong></div>
         <div><span>Status</span><strong class="status"><i aria-hidden="true"></i>Open to roles</strong></div>
@@ -195,42 +200,38 @@
 
         <div class="hero-copy">
 
-          <p class="eyebrow">Datasheet · Section 1 · General description</p>
+          <p class="eyebrow intro" style="--d: 0.15s">Section 1 · Overview</p>
 
-          <h1>Jacob Potts</h1>
+          <h1 class="hero-name" aria-label="Jacob Potts">
+            <span class="line"><span style="--d: 0.25s">Jacob</span></span>
+            <span class="line"><span style="--d: 0.38s">Potts</span></span>
+          </h1>
 
-          <p class="hero-sub">
-            I write the software that sits between a circuit board and the
-            people testing it.
+          <p class="hero-sub intro" style="--d: 0.55s">
+            Computer Engineering B.S./M.S. student at Cal State Fullerton.
+            Embedded Software Engineering Intern at RAVE Aerospace, summer 2026.
           </p>
 
-          <div class="hero-body">
+          <div class="hero-body intro" style="--d: 0.65s">
             <p>
-              I'm in the blended B.S./M.S. Computer Engineering program at
-              Cal State Fullerton, finishing both degrees in May 2028. This past
-              summer I was an embedded software intern at
-              <strong>RAVE Aerospace</strong> in Brea, building automated
-              acceptance and production test software and contributing to the
-              hardware abstraction layer of an embedded Linux system.
-            </p>
-            <p>
-              The part of the job I like most is the layer where software meets
-              the hardware: power negotiation, GPIO, boot states, a rack of
-              cables where seven out of ten turned out to be bad. Problems you
-              only find by plugging things in.
+              At <strong>RAVE Aerospace</strong> I built automated acceptance and
+              production test software, contributed to an embedded Linux hardware
+              abstraction layer, added features to a qualification-testing GUI,
+              and debugged a production burn-in rack. Graduating with both
+              degrees in May 2028.
             </p>
           </div>
 
-          <h2 class="mini-head">Features</h2>
-          <ul class="features">
-            <li>Embedded Linux HAL and automated test-software experience</li>
+          <h2 class="mini-head intro" style="--d: 0.75s">Features</h2>
+          <ul class="features intro" style="--d: 0.8s">
+            <li>Embedded Linux HAL and automated test software</li>
             <li>C, C++, Python, Bash, VHDL, MATLAB, QML</li>
-            <li>Comfortable at the bench: scope, DMM, function gen, DC supply</li>
-            <li>Contributed to qualification testing at an independent lab (ITL)</li>
-            <li>Based in Corona, CA &mdash; Southern California</li>
+            <li>Bench equipment: oscilloscope, multimeter, function generator, DC supply</li>
+            <li>Test software used in qualification testing at ITL, an independent lab</li>
+            <li>Based in Corona, California</li>
           </ul>
 
-          <div class="hero-actions">
+          <div class="hero-actions intro" style="--d: 0.9s">
             <a class="btn btn-solid" href="resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume <span aria-hidden="true">↓</span>
             </a>
@@ -257,7 +258,7 @@
             <span class="crop bl" aria-hidden="true"></span>
             <span class="crop br" aria-hidden="true"></span>
           </div>
-          <figcaption><b>Fig. 1</b> Unit under test, field conditions.</figcaption>
+          <figcaption class="intro" style="--d: 1.1s"><b>Fig. 1</b> Jacob J. Potts</figcaption>
         </figure>
 
       </section>
@@ -268,19 +269,30 @@
       <section class="pinout" aria-labelledby="pinout-title">
 
         <div class="pinout-chip">
-          <div id="chip" class="chip" role="group" aria-label="Pin diagram. Select a pin to read its description."></div>
+          <div id="chip" class="chip" role="group" aria-label="Pin diagram. Each pin is something I have worked on; select a pin to read about it."></div>
           <p class="fig-caption"><b>Fig. 2</b> Pin configuration, DIP-16, top view.</p>
         </div>
 
         <div class="pinout-info">
           <h2 class="mini-head" id="pinout-title">Pin description</h2>
-          <p class="pin-hint">Hover or tab through the pins.</p>
+          <p class="pin-hint">Each pin is something I've worked on. Hover, tap, or tab through them.</p>
           <div class="pin-readout" aria-live="polite">
-            <p class="pin-readout-id"><span id="pin-num">16</span><strong id="pin-name">VCC</strong></p>
-            <p id="pin-desc">Power supply. Fed by the CSUF blended B.S./M.S. program through May 2028.</p>
+            <p class="pin-readout-id">
+              <span id="pin-num">1</span>
+              <strong id="pin-name">USB-C</strong>
+              <em id="pin-src">RAVE Aerospace</em>
+            </p>
+            <h3 id="pin-title">USB-C power detection</h3>
+            <p id="pin-desc">
+              Wrote acceptance and production test software that detects how a unit is
+              being powered over USB-C, applies the power requirements for that specific
+              hardware, and alerts the operator when power is insufficient.
+            </p>
           </div>
           <noscript>
-            <p>C, C++, Python, Bash, VHDL, MATLAB, QML, GPIO, EEPROM, USB-C power, networking, Linux, Git, Qt.</p>
+            <p>USB-C power test software, embedded Linux HAL, GPIO, watchdog, Bluetooth status GUI,
+              1080p/4K GUI scaling, iPerf network validation, burn-in rack debugging, DHCP boot fix,
+              hardware identification, VHDL, assembly, C++, circuits, MATLAB, CAD.</p>
           </noscript>
         </div>
 
@@ -373,8 +385,8 @@
           </header>
 
           <p class="job-text">
-            24 hours a week on top of five days of in-person classes, for most of
-            two years. Customers, inventory, and keeping up with a busy team.
+            Worked 24 hours a week alongside five days of in-person classes.
+            Customer service, inventory, and a fast-paced team.
           </p>
 
         </article>
@@ -391,8 +403,8 @@
         <h2 class="section-title"><span>3</span>Projects</h2>
 
         <p class="section-note">
-          Coursework and lab builds from CSUF. Personal projects are on the way.
-          Watch <a href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          Coursework and lab work from CSUF. More on
+          <a href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
 
         <div class="projects">
@@ -446,49 +458,40 @@
           <table class="spec-table">
             <thead>
               <tr>
-                <th scope="col">Symbol</th>
                 <th scope="col">Parameter</th>
                 <th scope="col">Values</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>L<sub>sw</sub></code></td>
                 <th scope="row">Programming languages</th>
                 <td>C, C++, Python, Bash, MATLAB, QML, Verse</td>
               </tr>
               <tr>
-                <td><code>L<sub>hw</sub></code></td>
                 <th scope="row">Hardware description</th>
                 <td>VHDL</td>
               </tr>
               <tr>
-                <td><code>V<sub>cs</sub></code></td>
                 <th scope="row">Version control &amp; tracking</th>
                 <td>Git, GitHub, SVN, Bitbucket, Jira</td>
               </tr>
               <tr>
-                <td><code>E<sub>dev</sub></code></td>
                 <th scope="row">Environment &amp; frameworks</th>
                 <td>Linux, Qt, VS Code, Minicom, MPLab</td>
               </tr>
               <tr>
-                <td><code>S<sub>im</sub></code></td>
                 <th scope="row">Simulation</th>
                 <td>Questa, Multisim, MATLAB</td>
               </tr>
               <tr>
-                <td><code>I<sub>o</sub></code></td>
                 <th scope="row">Hardware &amp; interfaces</th>
                 <td>GPIO, EEPROM, USB-C power testing, network switches, Qualcomm hardware</td>
               </tr>
               <tr>
-                <td><code>B<sub>ench</sub></code></td>
                 <th scope="row">Lab equipment</th>
                 <td>Oscilloscope, multimeters, function generator, DC power supply, breadboards</td>
               </tr>
               <tr>
-                <td><code>M<sub>cad</sub></code></td>
                 <th scope="row">Mechanical CAD</th>
                 <td>AutoCAD, Fusion 360</td>
               </tr>
@@ -557,9 +560,8 @@
 
           <div class="contact-lead">
             <p>
-              Looking for internships and engineering roles in embedded software,
-              hardware validation, and test. Aerospace especially. The fastest way
-              to reach me is email.
+              Open to internships and engineering roles in embedded software,
+              hardware validation, test, and aerospace.
             </p>
             <a class="contact-email" href="mailto:JacobJamesPotts@gmail.com">JacobJamesPotts@gmail.com</a>
           </div>
@@ -580,6 +582,10 @@
             <li>
               <span>Resume</span>
               <a href="resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf ↓</a>
+            </li>
+            <li>
+              <span>Share</span>
+              <a href="#qr" data-qr-open>Show QR code ▣</a>
             </li>
             <li>
               <span>Location</span>
@@ -621,6 +627,17 @@
 
     </div>
   </main>
+
+
+  <dialog class="qr-dialog" id="qr" aria-labelledby="qr-title">
+    <div class="qr-card">
+      <p class="qr-label" id="qr-title">Scan to open</p>
+      <img src="qr-code.svg" alt="QR code linking to jacob-potts.github.io" width="320" height="320">
+      <p class="qr-url">jacob-potts.github.io</p>
+      <p class="qr-name">Jacob J. Potts · Computer Engineering</p>
+      <button class="btn qr-close" type="button" data-qr-close>Close</button>
+    </div>
+  </dialog>
 
 
   <footer class="site-footer">
