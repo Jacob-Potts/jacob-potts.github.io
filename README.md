@@ -46,6 +46,7 @@ Jacob-Potts.github.io/
 ├── style.css           # datasheet theme, light/dark, print styles
 ├── script.js           # pin diagram, project links, theme toggle
 ├── jacob-potts-1000.jpg  # web-sized photo (original kept for social previews)
+├── qr-code.svg       # QR code for jacob-potts.github.io (open with /#qr)
 ├── resume.pdf
 └── README.md
 ```
@@ -72,6 +73,8 @@ Then open `http://localhost:8000` in your browser.
 Website content is located in `index.html`.
 
 Styling and responsive layouts are located in `style.css`.
+
+To show the QR code, open https://jacob-potts.github.io/#qr or tap the QR button in the header.
 
 The pin diagram's labels and descriptions live in the `pins` array in `script.js`, and project card links live in `projectLinks` in the same file.
 
