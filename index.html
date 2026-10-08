@@ -13,80 +13,57 @@
     gtag('config', 'G-X8XEGS74L3');
   </script>
 
-  <!-- ======================================================
-       BASIC PAGE SETTINGS
-       ====================================================== -->
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch (e) { }
+  </script>
 
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <!-- ======================================================
        PRIMARY SEO
        ====================================================== -->
 
-  <title>
-    Jacob Potts Portfolio | Computer Engineering & Embedded Software
-  </title>
+  <title>Jacob Potts | Computer Engineering &amp; Embedded Software</title>
 
   <meta name="description"
-    content="Jacob Potts is a Computer Engineering B.S./M.S. student at California State University, Fullerton with experience in embedded software, Linux, automated testing, hardware validation, and aerospace systems.">
-
+    content="Jacob Potts is a Computer Engineering B.S./M.S. student at California State University, Fullerton and former Embedded Software Engineering Intern at RAVE Aerospace, working in embedded Linux, automated hardware testing, and hardware validation.">
   <meta name="author" content="Jacob J. Potts">
-
   <meta name="robots" content="index, follow, max-image-preview:large">
-
   <link rel="canonical" href="https://jacob-potts.github.io/">
 
+  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1612" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
 
   <!-- ======================================================
-       BROWSER / THEME
-       ====================================================== -->
-
-  <meta name="theme-color" content="#10231f">
-
-  <meta name="color-scheme" content="light">
-
-
-  <!-- ======================================================
-       OPEN GRAPH
-       Used by LinkedIn, Discord, Facebook, etc.
+       OPEN GRAPH / SOCIAL PREVIEWS
        ====================================================== -->
 
   <meta property="og:type" content="website">
-
   <meta property="og:url" content="https://jacob-potts.github.io/">
-
   <meta property="og:site_name" content="Jacob Potts Engineering Portfolio">
-
   <meta property="og:title" content="Jacob Potts | Computer Engineering & Embedded Software">
-
   <meta property="og:description"
-    content="Computer Engineering B.S./M.S. student at CSUF with experience in embedded software, Linux, automated testing, hardware validation, and aerospace systems.">
-
+    content="Computer Engineering B.S./M.S. student at CSUF. Embedded Linux, automated hardware testing, and hardware validation.">
   <meta property="og:image" content="https://jacob-potts.github.io/jacob-potts.jpg">
-
   <meta property="og:image:alt" content="Jacob Potts">
 
-
-  <!-- ======================================================
-       TWITTER / X PREVIEW
-       ====================================================== -->
-
   <meta name="twitter:card" content="summary">
-
   <meta name="twitter:title" content="Jacob Potts | Computer Engineering & Embedded Software">
-
   <meta name="twitter:description"
-    content="Computer Engineering B.S./M.S. student at CSUF specializing in embedded software, Linux, automated testing, and hardware validation.">
-
+    content="Computer Engineering B.S./M.S. student at CSUF. Embedded Linux, automated hardware testing, and hardware validation.">
   <meta name="twitter:image" content="https://jacob-potts.github.io/jacob-potts.jpg">
-
 
   <!-- ======================================================
        STRUCTURED DATA
-       Helps search engines understand who this site represents
        ====================================================== -->
 
   <script type="application/ld+json">
@@ -98,13 +75,14 @@
     "url": "https://jacob-potts.github.io/",
     "image": "https://jacob-potts.github.io/jacob-potts.jpg",
     "email": "mailto:JacobJamesPotts@gmail.com",
+    "jobTitle": "Computer Engineering Student",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Corona",
       "addressRegion": "CA",
       "addressCountry": "US"
     },
-    "affiliation": {
+    "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "California State University, Fullerton"
     },
@@ -112,24 +90,25 @@
       "Computer Engineering",
       "Embedded Software",
       "Embedded Linux",
-      "Linux",
+      "Hardware Abstraction Layers",
       "Hardware Validation",
       "Automated Testing",
-      "Hardware Testing",
       "C",
       "C++",
       "Python",
+      "Bash",
       "VHDL",
       "MATLAB",
+      "Qt",
       "GPIO",
       "EEPROM"
     ],
     "sameAs": [
-      "https://github.com/Jacob-Potts"
+      "https://github.com/Jacob-Potts",
+      "https://www.linkedin.com/in/JacobJPotts"
     ]
   }
   </script>
-
 
   <script type="application/ld+json">
   {
@@ -138,7 +117,6 @@
     "name": "Jacob Potts Engineering Portfolio",
     "alternateName": "Jacob Potts Portfolio",
     "url": "https://jacob-potts.github.io/",
-    "description": "Engineering portfolio of Jacob Potts, a Computer Engineering B.S./M.S. student focused on embedded software, Linux, automated testing, and hardware validation.",
     "author": {
       "@type": "Person",
       "name": "Jacob J. Potts"
@@ -146,1053 +124,512 @@
   }
   </script>
 
-
   <!-- ======================================================
        SITE FILES
        ====================================================== -->
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
 
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
 </head>
 
-
 <body>
 
-  <div class="cursor-glow" aria-hidden="true"></div>
-
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ======================================================
        HEADER
        ====================================================== -->
 
   <header class="site-header">
+    <div class="header-inner">
 
-    <a class="brand" href="#top" aria-label="Jacob Potts home">
-      Jacob Potts<span>/</span>
-    </a>
-
-
-    <nav aria-label="Primary navigation">
-
-      <a href="#experience">
-        Experience
+      <a class="brand" href="#top" aria-label="Jacob Potts, back to top">
+        <span class="brand-part">JP-2028</span>
+        <span class="brand-name">Jacob J. Potts</span>
       </a>
 
-      <a href="#projects">
-        Projects
-      </a>
+      <nav aria-label="Primary">
+        <a href="#overview"><span>1</span>Overview</a>
+        <a href="#experience"><span>2</span>Experience</a>
+        <a href="#projects"><span>3</span>Projects</a>
+        <a href="#specs"><span>4</span>Skills</a>
+        <a href="#education"><span>5</span>Education</a>
+        <a href="#contact"><span>6</span>Contact</a>
+      </nav>
 
-      <a href="#skills">
-        Skills
-      </a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <span class="theme-toggle-track" aria-hidden="true"><i></i></span>
+      </button>
 
-      <a href="#education">
-        Education
-      </a>
-
-      <a class="nav-contact" href="#contact">
-        Contact
-      </a>
-
-    </nav>
-
+    </div>
   </header>
 
 
-  <main id="top">
+  <main id="main">
+    <div class="sheet" id="top">
 
+      <!-- ====================================================
+           TITLE BLOCK
+           ==================================================== -->
 
-    <!-- ======================================================
-         HERO
-         ====================================================== -->
-
-    <section class="hero shell reveal">
-
-
-      <div class="hero-copy">
-
-
-        <p class="kicker">
-
-          <span></span>
-
-          Computer Engineering · Embedded Systems
-
-        </p>
-
-
-        <h1>
-
-          Computer Engineering
-
-          <br>
-
-          <em>Jacob Potts.</em>
-
-        </h1>
-
-
-        <p class="hero-intro">
-
-          Computer Engineering B.S./M.S. student at California State
-          University, Fullerton with experience in embedded software,
-          Linux, automated testing, and hardware validation.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-
-          <a class="button button-dark" href="#experience">
-            View experience
-          </a>
-
-
-          <a class="button button-light" href="resume.pdf" target="_blank" rel="noopener noreferrer">
-
-            Resume
-
-            <span>↗</span>
-
-          </a>
-
-
-          <a class="button button-light" href="https://github.com/Jacob-Potts" target="_blank"
-            rel="noopener noreferrer">
-
-            GitHub
-
-            <span>↗</span>
-
-          </a>
-
-
-        </div>
-
+      <div class="title-block" aria-label="Document information">
+        <div><span>Part no.</span><strong>JP-2028</strong></div>
+        <div class="tb-wide"><span>Description</span><strong>Computer engineer — embedded software &amp; hardware test</strong></div>
+        <div><span>Status</span><strong class="status"><i aria-hidden="true"></i>Open to roles</strong></div>
+        <div><span>Rev</span><strong>2026.10</strong></div>
       </div>
-
 
 
       <!-- ====================================================
-           HERO RIGHT SIDE
+           1 · OVERVIEW
            ==================================================== -->
 
-      <div class="hero-side">
+      <section class="hero" id="overview">
 
+        <div class="hero-copy">
 
-        <!-- PHOTO -->
+          <p class="eyebrow">Datasheet · Section 1 · General description</p>
 
-        <div class="portrait-wrap">
+          <h1>Jacob Potts</h1>
 
+          <p class="hero-sub">
+            I write the software that sits between a circuit board and the
+            people testing it.
+          </p>
 
-          <div class="portrait-accent"></div>
-
-
-          <div class="portrait-frame">
-
-            <img src="jacob-potts.jpg"
-              alt="Jacob Potts, Computer Engineering student at California State University Fullerton" class="portrait"
-              width="800" height="1000" fetchpriority="high">
-
-          </div>
-
-
-          <div class="portrait-caption">
-
-            <span>
-              Computer Engineering
-            </span>
-
-            <span class="portrait-caption-line"></span>
-
-            <span>
-              CSUF
-            </span>
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- ENGINEERING PROFILE -->
-
-        <aside class="profile" aria-label="Jacob Potts engineering profile">
-
-
-          <div class="profile-topline">
-
-            <p class="profile-label">
-              Engineering profile
+          <div class="hero-body">
+            <p>
+              I'm in the blended B.S./M.S. Computer Engineering program at
+              Cal State Fullerton, finishing both degrees in May 2028. This past
+              summer I was an embedded software intern at
+              <strong>RAVE Aerospace</strong> in Brea, building automated
+              acceptance and production test software and contributing to the
+              hardware abstraction layer of an embedded Linux system.
             </p>
-
-            <span class="profile-code">
-              JP / 2026
-            </span>
-
+            <p>
+              The part of the job I like most is the layer where software meets
+              the hardware: power negotiation, GPIO, boot states, a rack of
+              cables where seven out of ten turned out to be bad. Problems you
+              only find by plugging things in.
+            </p>
           </div>
 
+          <h2 class="mini-head">Features</h2>
+          <ul class="features">
+            <li>Embedded Linux HAL and automated test-software experience</li>
+            <li>C, C++, Python, Bash, VHDL, MATLAB, QML</li>
+            <li>Comfortable at the bench: scope, DMM, function gen, DC supply</li>
+            <li>Contributed to qualification testing at an independent lab (ITL)</li>
+            <li>Based in Corona, CA &mdash; Southern California</li>
+          </ul>
 
-
-          <div class="profile-row">
-
-            <span>
-              Focus
-            </span>
-
-            <strong>
-              Embedded software
-            </strong>
-
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+              Download resume <span aria-hidden="true">↓</span>
+            </a>
+            <a class="btn" href="mailto:JacobJamesPotts@gmail.com">
+              Email me <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-quiet" href="https://www.linkedin.com/in/JacobJPotts" target="_blank" rel="noopener noreferrer">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn-quiet" href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
           </div>
-
-
-
-          <div class="profile-row">
-
-            <span>
-              Program
-            </span>
-
-            <strong>
-              B.S./M.S. Computer Engineering
-            </strong>
-
-          </div>
-
-
-
-          <div class="profile-row">
-
-            <span>
-              Location
-            </span>
-
-            <strong>
-              Corona, California
-            </strong>
-
-          </div>
-
-
-
-          <div class="profile-row">
-
-            <span>
-              Graduation
-            </span>
-
-            <strong>
-              May 2028
-            </strong>
-
-          </div>
-
-
-
-          <p class="availability">
-
-            <i aria-hidden="true"></i>
-
-            Open to engineering opportunities
-
-          </p>
-
-
-        </aside>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         EXPERIENCE
-         ====================================================== -->
-
-    <section class="section shell reveal" id="experience">
-
-
-      <div class="section-lead">
-
-
-        <p class="section-number">
-
-          <span>01</span>
-
-          Experience
-
-        </p>
-
-
-        <div class="section-heading">
-
-
-          <h2>
-            Professional Experience
-          </h2>
-
-
-          <p>
-            Embedded software engineering, hardware testing,
-            and production support.
-          </p>
-
 
         </div>
 
 
-      </div>
+        <figure class="photo">
+          <div class="photo-frame">
+            <img src="jacob-potts-1000.jpg" alt="Jacob Potts smiling, standing on a coastal bluff above the ocean"
+              width="1000" height="1000" fetchpriority="high">
+            <span class="crop tl" aria-hidden="true"></span>
+            <span class="crop tr" aria-hidden="true"></span>
+            <span class="crop bl" aria-hidden="true"></span>
+            <span class="crop br" aria-hidden="true"></span>
+          </div>
+          <figcaption><b>Fig. 1</b> Unit under test, field conditions.</figcaption>
+        </figure>
+
+      </section>
 
 
+      <!-- PIN CONFIGURATION -->
 
-      <!-- RAVE AEROSPACE -->
+      <section class="pinout" aria-labelledby="pinout-title">
 
-      <article class="experience featured-experience">
-
-
-        <div class="experience-meta">
-
-
-          <p class="company">
-            RAVE Aerospace
-          </p>
-
-
-          <span>
-            Jun — Aug 2026
-          </span>
-
-
-          <span>
-            Brea, California
-          </span>
-
-
+        <div class="pinout-chip">
+          <div id="chip" class="chip" role="group" aria-label="Pin diagram. Select a pin to read its description."></div>
+          <p class="fig-caption"><b>Fig. 2</b> Pin configuration, DIP-16, top view.</p>
         </div>
 
+        <div class="pinout-info">
+          <h2 class="mini-head" id="pinout-title">Pin description</h2>
+          <p class="pin-hint">Hover or tab through the pins.</p>
+          <div class="pin-readout" aria-live="polite">
+            <p class="pin-readout-id"><span id="pin-num">16</span><strong id="pin-name">VCC</strong></p>
+            <p id="pin-desc">Power supply. Fed by the CSUF blended B.S./M.S. program through May 2028.</p>
+          </div>
+          <noscript>
+            <p>C, C++, Python, Bash, VHDL, MATLAB, QML, GPIO, EEPROM, USB-C power, networking, Linux, Git, Qt.</p>
+          </noscript>
+        </div>
+
+      </section>
 
 
-        <div class="experience-content">
+      <!-- ====================================================
+           2 · EXPERIENCE
+           ==================================================== -->
 
+      <section class="section reveal" id="experience">
 
-          <h3 class="role">
-            Embedded Software Engineering Intern
-          </h3>
+        <h2 class="section-title"><span>2</span>Experience</h2>
 
+        <article class="job">
 
-
-          <div class="achievement-grid">
-
-
+          <header class="job-head">
             <div>
-
-              <strong>
-                01
-              </strong>
-
-              <p>
-
-                Developed automated acceptance and production test
-                software that detected USB-C power configurations and
-                applied hardware-specific power requirements.
-
-              </p>
-
+              <h3>Embedded Software Engineering Intern</h3>
+              <p class="job-org">RAVE Aerospace <span>·</span> Brea, CA</p>
             </div>
+            <p class="job-date">Jun – Aug 2026</p>
+          </header>
 
+          <dl class="readings">
+            <div><dt>7 / 10</dt><dd>faulty cables found on a burn-in rack</dd></div>
+            <div><dt>1080p → 4K</dt><dd>responsive scaling added to a test GUI</dd></div>
+            <div><dt>ITL</dt><dd>qualification testing the test software supported</dd></div>
+          </dl>
 
-
-            <div>
-
-              <strong>
-                02
-              </strong>
-
+          <ol class="job-points">
+            <li>
+              <h4>Production test software</h4>
               <p>
-
-                Built embedded Linux HAL functionality for consistent
-                access to device identity, revisions, temperatures,
-                voltages, watchdog status, and GPIO data.
-
+                Developed automated acceptance and production test software that
+                detects the USB-C power configuration, applies hardware-specific power
+                requirements, and warns the operator when power is insufficient. It
+                was part of the setup that passed qualification testing at ITL, an
+                independent testing laboratory.
               </p>
-
-            </div>
-
-
-
-            <div>
-
-              <strong>
-                03
-              </strong>
-
+            </li>
+            <li>
+              <h4>Burn-in rack &amp; networking</h4>
               <p>
-
-                Added live Bluetooth status, automatic hardware
-                compatibility detection, and responsive 1080p/4K
-                scaling to a qualification-testing GUI.
-
+                Validated test-machine networking with bidirectional iPerf runs.
+                On the production burn-in rack, configured the switch, traced
+                power shutdowns back to a USB hub, and found 7 of 10 cables were
+                faulty before re-cabling the system.
               </p>
-
-            </div>
-
-
-
-            <div>
-
-              <strong>
-                04
-              </strong>
-
+            </li>
+            <li>
+              <h4>Qualification-testing GUI</h4>
               <p>
-
-                Validated networking with bidirectional iPerf tests
-                and diagnosed a burn-in rack, identifying 7 of 10
-                faulty cables and correcting system cabling.
-
+                Added real-time Bluetooth connection status, automatic hardware
+                compatibility detection, and responsive 1080p/4K scaling, so
+                operators get immediate feedback and can troubleshoot
+                connections mid-test.
               </p>
-
-            </div>
-
-
-
-            <div class="achievement-wide">
-
-              <strong>
-                05
-              </strong>
-
+            </li>
+            <li>
+              <h4>Embedded Linux HAL</h4>
               <p>
-
-                Added automatic hardware identification and resolved
-                a boot-state failure by preventing outdated DHCP
-                configurations from following device changes.
-
+                Contributed to a hardware abstraction layer giving test and
+                diagnostic tools one interface for device ID, hardware revision,
+                temperatures, voltages, watchdog status, and GPIO data.
               </p>
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </article>
-
-
-
-      <!-- STATER BROS -->
-
-      <article class="experience secondary">
-
-
-        <div class="experience-meta">
-
-
-          <p class="company">
-            Stater Bros. Markets
-          </p>
-
-
-          <span>
-            Sep 2024 — May 2026
-          </span>
-
-
-          <span>
-            Corona, California
-          </span>
-
-
-        </div>
-
-
-
-        <div class="experience-content">
-
-
-          <h3 class="role">
-            General Merchandise Clerk
-          </h3>
-
-
-          <p class="supporting-copy">
-
-            Balanced a 24-hour weekly work schedule with five days
-            of in-person university coursework while assisting
-            customers, maintaining inventory, and working in a
-            fast-paced team environment.
-
-          </p>
-
-
-        </div>
-
-
-      </article>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         PROJECTS
-         ====================================================== -->
-
-    <section class="section shell reveal" id="projects">
-
-
-      <div class="section-lead">
-
-
-        <p class="section-number">
-
-          <span>
-            02
-          </span>
-
-          Projects
-
-        </p>
-
-
-
-        <div class="section-heading">
-
-
-          <h2>
-            Engineering Projects
-          </h2>
-
-
-          <p>
-
-            Selected work in digital logic, embedded systems,
-            circuits, and engineering design.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <div class="project-grid">
-
-
-
-        <article class="project-card project-one" data-project="digital-logic">
-
-
-          <span class="project-type">
-            Digital Systems
-          </span>
-
-
-          <h3>
-            Circuit & Digital Logic
-          </h3>
-
-
-          <p>
-
-            Built and tested resistor circuits, designed
-            combinational and sequential logic, and simulated
-            VHDL and circuit behavior.
-
-          </p>
-
-
-          <small>
-            VHDL · Questa · Multisim
-          </small>
-
+            </li>
+            <li>
+              <h4>Boot-state bug</h4>
+              <p>
+                Added automatic hardware identification to performance-verification
+                software, and fixed a boot failure by tracking connected hardware
+                and updating DHCP config files, so a stale configuration
+                no longer followed the tester from one device to the next.
+              </p>
+            </li>
+          </ol>
 
         </article>
 
 
+        <article class="job job-minor">
 
-        <article class="project-card project-two" data-project="computer-organization">
+          <header class="job-head">
+            <div>
+              <h3>General Merchandise Clerk</h3>
+              <p class="job-org">Stater Bros. Markets #170 <span>·</span> Corona, CA</p>
+            </div>
+            <p class="job-date">Sep 2024 – May 2026</p>
+          </header>
 
-
-          <span class="project-type">
-            Embedded Systems
-          </span>
-
-
-          <h3>
-            Computer Organization
-          </h3>
-
-
-          <p>
-
-            Programmed with registers, memory addressing, and
-            bitwise operations while working with low-level
-            hardware and software concepts.
-
+          <p class="job-text">
+            24 hours a week on top of five days of in-person classes, for most of
+            two years. Customers, inventory, and keeping up with a busy team.
           </p>
-
-
-          <small>
-            Assembly · Registers · Memory
-          </small>
-
 
         </article>
 
+      </section>
 
 
-        <article class="project-card project-three" data-project="cad-design">
+      <!-- ====================================================
+           3 · PROJECTS
+           ==================================================== -->
 
+      <section class="section reveal" id="projects">
 
-          <span class="project-type">
-            Engineering Design
-          </span>
+        <h2 class="section-title"><span>3</span>Projects</h2>
 
-
-          <h3>
-            CAD & Mechanical Design
-          </h3>
-
-
-          <p>
-
-            Created dimensioned parts and mechanical components
-            with an emphasis on accuracy, manufacturability,
-            and technical documentation.
-
-          </p>
-
-
-          <small>
-            AutoCAD · Fusion 360
-          </small>
-
-
-        </article>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         SKILLS
-         ====================================================== -->
-
-    <section class="section shell reveal" id="skills">
-
-
-      <div class="section-lead">
-
-
-        <p class="section-number">
-
-          <span>
-            03
-          </span>
-
-          Skills
-
+        <p class="section-note">
+          Coursework and lab builds from CSUF. Personal projects are on the way.
+          Watch <a href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
 
+        <div class="projects">
 
+          <article class="project-card" data-project="digital-logic">
+            <p class="project-id">REF-01 · Digital systems</p>
+            <h3>Circuit &amp; Digital Logic</h3>
+            <p>
+              Built and tested resistor circuits on the bench, designed
+              combinational and sequential logic, and simulated the designs
+              in VHDL and Multisim before wiring them up.
+            </p>
+            <p class="project-tools">VHDL · Questa · Multisim</p>
+          </article>
 
-        <div class="section-heading">
+          <article class="project-card" data-project="computer-organization">
+            <p class="project-id">REF-02 · Low-level</p>
+            <h3>Computer Organization &amp; Assembly</h3>
+            <p>
+              Programmed directly against registers, memory addressing, and
+              bitwise operations, and worked through how the hardware actually
+              executes what the software asks for.
+            </p>
+            <p class="project-tools">Assembly · Registers · Memory</p>
+          </article>
 
-
-          <h2>
-            Technical Skills
-          </h2>
-
-
-          <p>
-
-            Programming languages, development tools,
-            and hardware experience.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <div class="skill-list">
-
-
-
-        <div class="skill-block skill-code">
-
-
-          <span class="skill-mark">
-            01
-          </span>
-
-
-          <h3>
-            Programming
-          </h3>
-
-
-          <p>
-
-            C, C++, Bash, Python, VHDL, MATLAB, Verse, QML
-
-          </p>
-
+          <article class="project-card" data-project="cad-design">
+            <p class="project-id">REF-03 · Mechanical</p>
+            <h3>CAD &amp; Mechanical Design</h3>
+            <p>
+              Drew fully dimensioned parts and mechanical components, with an
+              eye on accuracy, manufacturability, and clean documentation.
+            </p>
+            <p class="project-tools">AutoCAD · Fusion 360</p>
+          </article>
 
         </div>
 
+      </section>
 
 
-        <div class="skill-block skill-tools">
+      <!-- ====================================================
+           4 · SKILLS (ELECTRICAL CHARACTERISTICS)
+           ==================================================== -->
 
+      <section class="section reveal" id="specs">
 
-          <span class="skill-mark">
-            02
-          </span>
+        <h2 class="section-title"><span>4</span>Skills <small>Electrical characteristics</small></h2>
 
-
-          <h3>
-            Development
-          </h3>
-
-
-          <p>
-
-            Linux, Git, GitHub, SVN, Bitbucket, Qt,
-            VS Code, Minicom, Questa, Multisim
-
-          </p>
-
-
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>L<sub>sw</sub></code></td>
+                <th scope="row">Programming languages</th>
+                <td>C, C++, Python, Bash, MATLAB, QML, Verse</td>
+              </tr>
+              <tr>
+                <td><code>L<sub>hw</sub></code></td>
+                <th scope="row">Hardware description</th>
+                <td>VHDL</td>
+              </tr>
+              <tr>
+                <td><code>V<sub>cs</sub></code></td>
+                <th scope="row">Version control &amp; tracking</th>
+                <td>Git, GitHub, SVN, Bitbucket, Jira</td>
+              </tr>
+              <tr>
+                <td><code>E<sub>dev</sub></code></td>
+                <th scope="row">Environment &amp; frameworks</th>
+                <td>Linux, Qt, VS Code, Minicom, MPLab</td>
+              </tr>
+              <tr>
+                <td><code>S<sub>im</sub></code></td>
+                <th scope="row">Simulation</th>
+                <td>Questa, Multisim, MATLAB</td>
+              </tr>
+              <tr>
+                <td><code>I<sub>o</sub></code></td>
+                <th scope="row">Hardware &amp; interfaces</th>
+                <td>GPIO, EEPROM, USB-C power testing, network switches, Qualcomm hardware</td>
+              </tr>
+              <tr>
+                <td><code>B<sub>ench</sub></code></td>
+                <th scope="row">Lab equipment</th>
+                <td>Oscilloscope, multimeters, function generator, DC power supply, breadboards</td>
+              </tr>
+              <tr>
+                <td><code>M<sub>cad</sub></code></td>
+                <th scope="row">Mechanical CAD</th>
+                <td>AutoCAD, Fusion 360</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
+      </section>
 
 
-        <div class="skill-block skill-hardware">
+      <!-- ====================================================
+           5 · EDUCATION
+           ==================================================== -->
 
+      <section class="section reveal" id="education">
 
-          <span class="skill-mark">
-            03
-          </span>
+        <h2 class="section-title"><span>5</span>Education</h2>
 
+        <div class="edu">
 
-          <h3>
-            Hardware & Testing
-          </h3>
+          <div class="edu-main">
+            <p class="edu-school">California State University, Fullerton</p>
+            <h3>Blended B.S./M.S. in Computer Engineering</h3>
+            <p class="edu-note">A four-year accelerated program that ends with both degrees.</p>
 
-
-          <p>
-
-            GPIO, EEPROM, USB-C power testing, oscilloscopes,
-            multimeters, function generators, DC power supplies,
-            breadboards, network switches
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         EDUCATION
-         ====================================================== -->
-
-    <section class="education shell reveal" id="education">
-
-
-      <p class="section-number">
-
-        <span>
-          04
-        </span>
-
-        Education
-
-      </p>
-
-
-
-      <div class="education-content">
-
-
-        <div>
-
-
-          <p class="school">
-            California State University, Fullerton
-          </p>
-
-
-          <h2>
-
-            B.S./M.S.
-
-            <br>
-
-            Computer Engineering
-
-          </h2>
-
-
-          <p class="degree-note">
-
-            Four-year accelerated program leading to both degrees.
-
-          </p>
-
-
-        </div>
-
-
-
-        <div class="education-meta">
-
-
-
-          <div>
-
-
-            <span>
-              Program
-            </span>
-
-
-            <strong>
-              Aug 2024 — May 2028
-            </strong>
-
-
+            <div class="progress" aria-label="Program progress">
+              <div class="progress-labels">
+                <span>Aug 2024</span>
+                <span class="progress-pct" id="progress-pct"></span>
+                <span>May 2028</span>
+              </div>
+              <div class="progress-bar"><i id="progress-fill"></i></div>
+            </div>
           </div>
 
+          <dl class="edu-stats">
+            <div><dt>GPA</dt><dd>3.32</dd></div>
+            <div><dt>Expected</dt><dd>May 2028</dd></div>
+          </dl>
+
+        </div>
+
+        <h4 class="mini-head">Relevant coursework</h4>
+        <ul class="courses">
+          <li>Circuit Analysis</li>
+          <li>C++ Object-Oriented Programming</li>
+          <li>Digital Logic</li>
+          <li>Computer Organization &amp; Assembly</li>
+          <li>Calculus I–III</li>
+          <li>Linear Algebra &amp; Differential Equations</li>
+          <li>Modeling &amp; Simulation of Signals &amp; Systems</li>
+        </ul>
+
+      </section>
 
 
-          <div>
+      <!-- ====================================================
+           6 · CONTACT
+           ==================================================== -->
 
+      <section class="section contact reveal" id="contact">
 
-            <span>
-              GPA
-            </span>
+        <h2 class="section-title"><span>6</span>Contact <small>Ordering information</small></h2>
 
+        <div class="contact-grid">
 
-            <strong>
-              3.32
-            </strong>
-
-
+          <div class="contact-lead">
+            <p>
+              Looking for internships and engineering roles in embedded software,
+              hardware validation, and test. Aerospace especially. The fastest way
+              to reach me is email.
+            </p>
+            <a class="contact-email" href="mailto:JacobJamesPotts@gmail.com">JacobJamesPotts@gmail.com</a>
           </div>
 
+          <ul class="contact-list">
+            <li>
+              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/JacobJPotts" target="_blank" rel="noopener noreferrer">in/JacobJPotts ↗</a>
+            </li>
+            <li>
+              <span>GitHub</span>
+              <a href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">Jacob-Potts ↗</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href="tel:+19515320799">951-532-0799</a>
+            </li>
+            <li>
+              <span>Resume</span>
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer">resume.pdf ↓</a>
+            </li>
+            <li>
+              <span>Location</span>
+              <b>Corona, California</b>
+            </li>
+          </ul>
 
         </div>
 
-
-      </div>
-
+      </section>
 
 
-      <div class="coursework">
+      <!-- REVISION HISTORY -->
 
+      <section class="section revisions reveal" aria-labelledby="rev-title">
 
-        <strong>
-          Relevant Coursework
-        </strong>
+        <h2 class="mini-head" id="rev-title">Revision history</h2>
 
-
-        <p>
-
-          Circuit Analysis · C++ Object-Oriented Programming ·
-          Digital Logic · Computer Organization & Assembly ·
-          Calculus I–III · Linear Algebra & Differential Equations ·
-          Modeling & Simulation of Signals & Systems
-
-        </p>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         CONTACT
-         ====================================================== -->
-
-    <section class="contact shell reveal" id="contact">
-
-
-      <div class="section-lead">
-
-
-        <p class="section-number">
-
-          <span>
-            05
-          </span>
-
-          Contact
-
-        </p>
-
-
-
-        <div class="section-heading">
-
-
-          <h2>
-            Contact
-          </h2>
-
-
-          <p>
-
-            Interested in embedded software, hardware validation,
-            aerospace systems, and computer engineering opportunities.
-
-          </p>
-
-
+        <div class="table-wrap">
+          <table class="rev-table">
+            <thead>
+              <tr>
+                <th scope="col">Rev</th>
+                <th scope="col">Date</th>
+                <th scope="col">Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>Aug 2024</td><td>Started the blended B.S./M.S. Computer Engineering program at CSUF.</td></tr>
+              <tr><td>B</td><td>Sep 2024</td><td>Started at Stater Bros. Markets, 24 hrs/week alongside a full course load.</td></tr>
+              <tr><td>C</td><td>Jun 2026</td><td>Embedded Software Engineering Intern at RAVE Aerospace.</td></tr>
+              <tr><td>D</td><td>Aug 2026</td><td>Internship complete. Test software supported qualification at ITL.</td></tr>
+              <tr class="rev-planned"><td>E</td><td>May 2028</td><td>Planned: B.S. and M.S. in Computer Engineering.</td></tr>
+            </tbody>
+          </table>
         </div>
 
+      </section>
 
-      </div>
-
-
-
-      <div class="contact-links">
-
-
-
-        <a class="contact-card contact-email" href="mailto:JacobJamesPotts@gmail.com">
-
-
-          <span>
-            Email
-          </span>
-
-
-          <strong>
-            JacobJamesPotts@gmail.com
-          </strong>
-
-
-          <i aria-hidden="true">
-            ↗
-          </i>
-
-
-        </a>
-
-
-
-        <a class="contact-card" href="https://github.com/Jacob-Potts" target="_blank" rel="noopener noreferrer">
-
-
-          <span>
-            GitHub
-          </span>
-
-
-          <strong>
-            Jacob-Potts
-          </strong>
-
-
-          <i aria-hidden="true">
-            ↗
-          </i>
-
-
-        </a>
-
-
-
-        <a class="contact-card" href="tel:+19515320799">
-
-
-          <span>
-            Phone
-          </span>
-
-
-          <strong>
-            951-532-0799
-          </strong>
-
-
-          <i aria-hidden="true">
-            ↗
-          </i>
-
-
-        </a>
-
-
-      </div>
-
-
-    </section>
-
-
+    </div>
   </main>
 
 
-
-  <!-- ======================================================
-       FOOTER
-       ====================================================== -->
-
-  <footer class="shell">
-
-
-    <p>
-      © 2026 Jacob J. Potts
-    </p>
-
-
-    <p>
-      Computer Engineering · California
-    </p>
-
-
-    <a href="#top">
-      Back to top ↑
-    </a>
-
-
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>JP-2028 · Rev 2026.10</p>
+      <p>© 2026 Jacob J. Potts</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
-
 
 </body>
 
